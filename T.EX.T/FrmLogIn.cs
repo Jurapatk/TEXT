@@ -24,8 +24,6 @@ namespace T.EX.T
         private void FrmLogIn_Load(object sender, EventArgs e)
         {
 
-            Center();
-
         }
 
         private void lblUsername_Click(object sender, EventArgs e)
@@ -39,12 +37,8 @@ namespace T.EX.T
             txtPassword.Visible = true;
             txtPassword.Focus();
         }
+
         private void FrmLogIn_Resize(object sender, EventArgs e)
-        {
-            Center();
-            Debug.WriteLine("Resize fired: ClientSize=" + this.ClientSize);
-        }
-        private void Center()
         {
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
@@ -52,8 +46,8 @@ namespace T.EX.T
 
             LoginBG.Location = new Point((formWidth - LoginBG.Width) / 2, (formHeight - LoginBG.Height) / 2);
             btnLogin.Location = new Point((formWidth - btnLogin.Width) / 2, btnLogin.Location.Y);
-            pnlUsername.Location = new Point((formWidth - pnlUsername.Width) / 2, pnlUsername.Location.Y);
-            pnlPassword.Location = new Point((formWidth - pnlPassword.Width) / 2, pnlPassword.Location.Y);
+            pnlUsername.Location = new Point((formWidth - pnlUsername.Width) / 2, (formHeight - pnlUsername.Height) / 2);
+            pnlPassword.Location = new Point((formWidth - pnlPassword.Width) / 2, (formHeight / 2 ) + pnlUsername.Height);
             btnLogin.MakeButtonRounded(6);
             pnlUsername.MakePanelRounded(6);
             pnlPassword.MakePanelRounded(6);
@@ -66,12 +60,10 @@ namespace T.EX.T
             string username = txtUsername.Text;
             Session.Username = username;
 
+            this.Hide();
             FrmOpn FrmOpn = new FrmOpn();
-            FrmOpn.WindowState = FormWindowState.Maximized;
-            FrmOpn.FormBorderStyle = FormBorderStyle.None;
-           
+            FrmOpn.FormClosed += (s, args) => Application.Exit();
             FrmOpn.Show();
-            this.Close();
 
 
         }

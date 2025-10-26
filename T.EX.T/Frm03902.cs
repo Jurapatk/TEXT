@@ -16,18 +16,22 @@ namespace TEXT
         public Frm03902()
         {
             InitializeComponent();
-            this.Load += Frm03902_Load;
         }
 
         private void Frm03902_Load(object sender, EventArgs e)
         {
             string user = Session.Username;
             lblUsername.Text = user;
-            Center();
 
 
         }
-        private void Center()
+        private void Frm03902_Shown(object sender, EventArgs e)
+        {
+            pnl03902.Focus();
+
+
+        }
+        private void Frm03902_Resize(object sender, EventArgs e)
         {
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
@@ -48,6 +52,7 @@ namespace TEXT
         {
             this.Hide();
             FrmOpn OpnForm = new FrmOpn();
+            OpnForm.FormClosed += (s, args) => Application.Exit();
             OpnForm.Show();
         }
 
@@ -55,6 +60,7 @@ namespace TEXT
         {
             this.Hide();
             FrmSetting FrmSetting = new FrmSetting();
+            FrmSetting.FormClosed += (s, args) => Application.Exit();
             FrmSetting.Show();
         }
 
@@ -62,6 +68,7 @@ namespace TEXT
         {
             this.Hide();
             FrmLogIn loginForm = new FrmLogIn();
+            loginForm.FormClosed += (s, args) => Application.Exit();
             loginForm.Show();
         }
 
@@ -69,6 +76,7 @@ namespace TEXT
         {
             this.Hide();
             Frm0390 Frm0390 = new Frm0390();
+            Frm0390.FormClosed += (s, args) => Application.Exit();
             Frm0390.Show();
         }
 

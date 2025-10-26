@@ -169,6 +169,8 @@
             this.Controls.Add(this.LoginBG);
             this.Name = "FrmLogIn";
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.FrmLogIn_Load);
+            this.Resize += new System.EventHandler(this.FrmLogIn_Resize);
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLogIn_Load);
             this.pnlPassword.ResumeLayout(false);

@@ -18,7 +18,6 @@ namespace TEXT
         public FrmOpn()
         {
             InitializeComponent();
-            this.Load += FrmOpn_Load;
         }
 
 
@@ -39,23 +38,15 @@ namespace TEXT
         {
             string user = Session.Username;
             lblUsername.Text = user;
-
-            Center();
-            this.SizeChanged += (s, ev) => Center();
             _slideTimer = new Timer();
             _slideTimer.Interval = 15; // ms
             _slideTimer.Tick += SlideTimer_Tick;
          
         }
-        private void FrmOpn_Resize(object sender, EventArgs e)
-        {
-            Center();
-
-        }
 
     
-    private void Center()
-{
+    private void FrmOpn_Resize(object sender, EventArgs e)
+        {
     int formWidth = this.ClientSize.Width;
     int formHeight = this.ClientSize.Height;
 
@@ -181,19 +172,22 @@ private void SlideTimer_Tick(object sender, EventArgs e)
         {
             this.Hide();
             Frm0390 Frm0390 = new Frm0390();
+            Frm0390.FormClosed += (s, args) => Application.Exit();
             Frm0390.Show();
         }
-
+    
         private void icoSetting_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmSetting FrmSetting = new FrmSetting();
+            FrmSetting.FormClosed += (s, args) => Application.Exit();
             FrmSetting.Show();
         }
         private void icoLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmLogIn loginForm = new FrmLogIn();
+            loginForm.FormClosed += (s, args) => Application.Exit();
             loginForm.Show();
         }
 
@@ -201,112 +195,36 @@ private void SlideTimer_Tick(object sender, EventArgs e)
         {
             this.Hide();
             FrmLogIn loginForm = new FrmLogIn();
+            loginForm.FormClosed += (s, args) => Application.Exit();
             loginForm.Show();
+            
         }
 
         private void btn40_Click(object sender, EventArgs e)
         {
             this.Hide();
             Frm0400 Frm0400 = new Frm0400();
+            Frm0400.FormClosed += (s, args) => Application.Exit();
             Frm0400.Show();
+            
+        }
+
+        private void btn50_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm0500 Frm0500 = new Frm0500();
+            Frm0500.FormClosed += (s, args) => Application.Exit();
+            Frm0500.Show();
+        }
+
+        private void btn61_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm0610 Frm0610 = new Frm0610();
+            Frm0610.FormClosed += (s, args) => Application.Exit();
+            Frm0610.Show();
         }
     }
 
 
 }
-//    private void Center()
-//    {
-//        int formWidth = this.ClientSize.Width;
-//        int formHeight = this.ClientSize.Height;
-
-//        btnOpn.MakeButtonRounded(10);
-//        btn39.MakeButtonRounded(10);
-//        btn40.MakeButtonRounded(10);
-//        btn50.MakeButtonRounded(10);
-//        btn61.MakeButtonRounded(10);
-
-//        pnlHeader.Width = formWidth;
-
-//        int w = this.ClientSize.Width;
-//        int h = this.ClientSize.Height;
-
-//        int marginX = 180;
-//        int marginY = 180;
-
-//        int yTop = 180;
-//        int yMid = h / 2 - 40;
-//        int yBottom = h - 280;
-
-
-//        btnOpn.Location = new Point((w - btn40.Width) / 2, yMid);
-//        btn39.Location = new Point((w - btn40.Width) / 2, yMid);
-//        btn50.Location = new Point((w - btn40.Width) / 2, yMid);
-//        btn61.Location = new Point((w - btn40.Width) / 2, yMid);
-//        btn40.Location = new Point((w - btn40.Width) / 2, yMid);
-
-
-//    }
-
-//    private void btnOpn_Click(object sender, EventArgs e)
-//    {
-//        int w = this.ClientSize.Width;
-//        int h = this.ClientSize.Height;
-
-//        int marginX = 180;
-//        int yTop = 180;
-//        int yMid = h / 2 - 40;
-//        int yBottom = h - 280;
-
-//        int centerX = (w - btn40.Width) / 2;
-
-
-//        _slides = new List<SlideInfo>
-//{
-//    new SlideInfo { Ctrl = btn39, StartX = centerX, StartY = yMid, TargetX = marginX, TargetY = yTop },
-//    new SlideInfo { Ctrl = btn50, StartX = centerX, StartY = yMid, TargetX = marginX, TargetY = yBottom },
-//    new SlideInfo { Ctrl = btn61, StartX = centerX, StartY = yMid, TargetX = w - btn61.Width - marginX, TargetY = yBottom },
-//    new SlideInfo { Ctrl = btn40, StartX = centerX, StartY = yMid, TargetX = w - btn61.Width - marginX, TargetY = yTop } // ตัวอย่าง diagonal ไปบน
-//};
-
-//        _isSlidingOut = true;
-//        _slideTimer.Start();
-//    }
-
-//    private void SlideTimer_Tick(object sender, EventArgs e)
-//    {
-//        if (!_isSlidingOut || _slides == null || _slides.Count == 0)
-//            return;
-
-//        int step = 15; 
-//        bool allAtTarget = true;
-
-//        foreach (var s in _slides)
-//        {
-//            int curX = s.Ctrl.Location.X;
-//            int curY = s.Ctrl.Location.Y;
-
-//            int dirX = Math.Sign(s.TargetX - curX);
-//            int nextX = curX + dirX * step;
-//            if (dirX == 0) nextX = curX;
-
-//            int dirY = Math.Sign(s.TargetY - curY);
-//            int nextY = curY + dirY * step;
-//            if (dirY == 0) nextY = curY;
-
-//            if ((dirX > 0 && nextX >= s.TargetX) || (dirX < 0 && nextX <= s.TargetX))
-//                nextX = s.TargetX;
-//            if ((dirY > 0 && nextY >= s.TargetY) || (dirY < 0 && nextY <= s.TargetY))
-//                nextY = s.TargetY;
-
-//            s.Ctrl.Location = new Point(nextX, nextY);
-
-//            if (nextX != s.TargetX || nextY != s.TargetY)
-//                allAtTarget = false;
-//        }
-
-//        if (allAtTarget)
-//        {
-//            _slideTimer.Stop();
-//            _isSlidingOut = false;
-//        }
-//    }

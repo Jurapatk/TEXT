@@ -16,38 +16,37 @@ namespace TEXT
         public Frm0400()
         {
             InitializeComponent();
-            this.Load += Frm0400_Load;
 
         }
         private void Frm0400_Load(object sender, EventArgs e)
         {
             string user = Session.Username;
             lblUsername.Text = user;
-            Center();
-
+        }
+        private void Frm0400_Shown(object sender, EventArgs e)
+        {
+            pnl0400.Focus();
 
         }
-        private void Center()
+        private void Frm0400_Resize(object sender, EventArgs e)
         {
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
 
 
-            pnlHeader4.Width = formWidth;
+            pnlHeader.Width = formWidth;
             pnl0400.Width = formWidth - 160;
-            pnl0400.Height = formHeight - pnlHeader4.Height - 80;
-            pnl0400.Location = new Point((formWidth - pnl0400.Width) / 2, (formHeight - pnl0400.Height + pnlHeader4.Height) / 2);
+            pnl0400.Height = formHeight - pnlHeader.Height - 80;
+            pnl0400.Location = new Point((formWidth - pnl0400.Width) / 2, (formHeight - pnl0400.Height + pnlHeader.Height) / 2);
 
             pnl0400.MakePanelRounded(20);
-            //btn392Back.MakeButtonRounded(8);
-            //btn392Print.MakeButtonRounded(8);
-
         }
 
         private void icoBack2Opn_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmOpn OpnForm = new FrmOpn();
+            OpnForm.FormClosed += (s, args) => Application.Exit();
             OpnForm.Show();
         }
 
@@ -55,6 +54,7 @@ namespace TEXT
         {
             this.Hide();
             FrmLogIn loginForm = new FrmLogIn();
+            loginForm.FormClosed += (s, args) => Application.Exit();
             loginForm.Show();
         }
 
@@ -62,6 +62,7 @@ namespace TEXT
         {
             this.Hide();
             FrmSetting FrmSetting = new FrmSetting();
+            FrmSetting.FormClosed += (s, args) => Application.Exit();
             FrmSetting.Show();
         }
     }

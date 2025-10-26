@@ -108,6 +108,7 @@
             this.btn50.TabIndex = 1;
             this.btn50.Text = "0500\r\n2D Scan";
             this.btn50.UseVisualStyleBackColor = false;
+            this.btn50.Click += new System.EventHandler(this.btn50_Click);
             // 
             // btn61
             // 
@@ -122,6 +123,7 @@
             this.btn61.TabIndex = 1;
             this.btn61.Text = "0610\r\nMBB";
             this.btn61.UseVisualStyleBackColor = false;
+            this.btn61.Click += new System.EventHandler(this.btn61_Click);
             // 
             // pnlHeader
             // 
@@ -134,7 +136,7 @@
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.pnlHeader.Controls.Add(this.icoLogout, 7, 0);
             this.pnlHeader.Controls.Add(this.pictureBox4, 5, 0);
             this.pnlHeader.Controls.Add(this.icoSetting, 6, 0);
@@ -156,7 +158,7 @@
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblText.ForeColor = System.Drawing.Color.White;
-            this.lblText.Location = new System.Drawing.Point(79, 7);
+            this.lblText.Location = new System.Drawing.Point(78, 7);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(336, 64);
             this.lblText.TabIndex = 1;
@@ -168,7 +170,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(1169, 23);
+            this.lblUsername.Location = new System.Drawing.Point(1165, 23);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(138, 32);
             this.lblUsername.TabIndex = 1;
@@ -180,7 +182,7 @@
             this.LblMC.AutoSize = true;
             this.LblMC.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMC.ForeColor = System.Drawing.Color.White;
-            this.LblMC.Location = new System.Drawing.Point(1013, 23);
+            this.LblMC.Location = new System.Drawing.Point(1009, 23);
             this.LblMC.Name = "LblMC";
             this.LblMC.Size = new System.Drawing.Size(91, 32);
             this.LblMC.TabIndex = 1;
@@ -191,7 +193,7 @@
             this.icoLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.icoLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.icoLogout.Image = global::TEXT.Properties.Resources.LogOut;
-            this.icoLogout.Location = new System.Drawing.Point(1490, 21);
+            this.icoLogout.Location = new System.Drawing.Point(1488, 21);
             this.icoLogout.Name = "icoLogout";
             this.icoLogout.Size = new System.Drawing.Size(39, 36);
             this.icoLogout.TabIndex = 0;
@@ -203,7 +205,7 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox4.Image = global::TEXT.Properties.Resources.user1;
-            this.pictureBox4.Location = new System.Drawing.Point(1330, 21);
+            this.pictureBox4.Location = new System.Drawing.Point(1326, 21);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 37);
             this.pictureBox4.TabIndex = 0;
@@ -214,7 +216,7 @@
             this.icoSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.icoSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.icoSetting.Image = global::TEXT.Properties.Resources.Setting;
-            this.icoSetting.Location = new System.Drawing.Point(1408, 19);
+            this.icoSetting.Location = new System.Drawing.Point(1404, 19);
             this.icoSetting.Name = "icoSetting";
             this.icoSetting.Size = new System.Drawing.Size(40, 41);
             this.icoSetting.TabIndex = 0;
@@ -258,6 +260,8 @@
             this.Name = "FrmOpn";
             this.Text = "TEXT Operations";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmOpn_Load);
+            this.Resize += new System.EventHandler(this.FrmOpn_Resize);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icoLogout)).EndInit();

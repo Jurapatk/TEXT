@@ -16,18 +16,16 @@ namespace TEXT
         public FrmSetting()
         {
             InitializeComponent();
-            this.Load += FrmSetting_Load;
         }
 
         private void FrmSetting_Load(object sender, EventArgs e)
         {
             string user = Session.Username;
             lblUsername.Text = user;
-            Center();
 
 
         }
-        private void Center()
+        private void FrmSetting_Resize(object sender, EventArgs e)
         {
             int formWidth = this.ClientSize.Width;
             int formHeight = this.ClientSize.Height;
@@ -44,6 +42,7 @@ namespace TEXT
         {
             this.Hide();
             FrmLogIn loginForm = new FrmLogIn();
+            loginForm.FormClosed += (s, args) => Application.Exit();
             loginForm.Show();
         }
 
@@ -51,6 +50,7 @@ namespace TEXT
         {
             this.Hide();
             FrmOpn OpnForm = new FrmOpn();
+            OpnForm.FormClosed += (s, args) => Application.Exit();
             OpnForm.Show();
         }
 
