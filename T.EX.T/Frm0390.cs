@@ -10,7 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Globalization;
 using T.EX.T;
+using Newtonsoft.Json.Linq;
 
 
 
@@ -29,70 +31,77 @@ namespace TEXT
         {
             string user = Session.Username;
             lblUsername.Text = user;
-            using (var cn = new SqlConnection(g_.ConStr))
+
+            FillComboBox(cbbReOven, "Re-Oven Baking", "Code");
+            FillComboBox(cbbShift, "Shift", "Code");
+            FillComboBox(cbbFIPGMatCode, "FIPG Material", "Code");
+            FillComboBox(cbbPartName, "Part name", "Part name");
+            FillComboBox(cbbProductRevision, "Product Revision", "Code");
+            FillComboBox(cbbTool, "Fixture", "Code");
+            FillComboBox(cbbCoverMaterialCode, "Cover Material", "Cover material name");
+
+
+
+            //cbbPartName.Items.Clear();
+            //cbbCoverMaterialCode.Items.Clear();
+            //cbbReOven.Items.Clear();
+            //cbbShift.Items.Clear();
+            //cbbFIPGMatCode.Items.Clear();
+            //cbbProductRevision.Items.AddRange(Enumerable.Range('A', 26)
+            //    .Select(i => ((char)i).ToString())
+            //    .ToArray());
+            //cbbTool.Items.AddRange(Enumerable.Range(1, 9).Select(n => n.ToString()).ToArray());
+
+            //void FillComboBox<T>(ComboBox cb, string tableName, string columnName)
+            //{
+            //    var dt = SqlSelect.GetDataTable(tableName);
+            //    var list = SqlSelect.GetList(tableName, columnName);
+            //    foreach (var item in list)
+            //        cb.Items.Add(item);
+            //}
+
+            //// ใช้
+            //FillComboBox(cbbReOven, "Re-Oven Baking", "Code");
+            //FillComboBox(cbbShift, "Shift", "Code");
+            //FillComboBox(cbbFIPGMatCode, "FIPG Material", "Code");
+
+            //// สำหรับ Part name
+            //FillComboBox(cbbPartName, "Part name", "Part name");
+            //DataTable dt = SqlSelect.GetDataTable("Re-Oven Baking");
+            //List<string> reoven = SqlSelect.GetList("Re-Oven Baking", "Code");
+            //foreach (string code in reoven)
+            //{
+            //    cbbReOven.Items.Add(code);
+            //}
+
+            //DataTable dt2 = SqlSelect.GetDataTable("Shift");
+            //List<string> shift = SqlSelect.GetList("Shift", "Code");
+            //foreach (string code in shift)
+            //{
+            //    cbbShift.Items.Add(code);
+            //}
+
+            //DataTable dt3 = SqlSelect.GetDataTable("FIPG Material");
+            //List<string> fipg = SqlSelect.GetList("FIPG Material", "Code");
+            //foreach (string code in fipg)
+            //{
+            //    cbbFIPGMatCode.Items.Add(code);
+            //}
+
+            //DataTable dt4 = SqlSelect.GetDataTable("Part name");
+            //List<string> pn = SqlSelect.GetList("Part name", "Part name");
+            //foreach (string code in pn)
+            //{
+            //    cbbPartName.Items.Add(code);
+            //}
+        }
+        private void FillComboBox(ComboBox cb, string tableName, string columnName)
+        {
+            cb.Items.Clear(); // ล้างก่อนเติม
+            var list = SqlSelect.GetList(tableName, columnName);
+            foreach (var item in list)
             {
-                try
-                {
-                    cbbPartName.Items.Clear();
-                    cbbCoverMaterialCode.Items.Clear();
-                    cbbReOven.Items.Clear();
-                    cbbShift.Items.Clear();
-                    cbbFIPGMatCode.Items.Clear();
-                    cbbProductRevision.Items.AddRange(Enumerable.Range('A', 26)
-                        .Select(i => ((char)i).ToString())
-                        .ToArray());
-                    cbbTool.Items.AddRange(Enumerable.Range(1, 9).Select(n => n.ToString()).ToArray());
-                    cbbReOven.Items.Add("F");
-                    cbbReOven.Items.Add("Q");
-                    cbbReOven.Items.Add("R");
-                    cbbReOven.Items.Add("T");
-                    cbbShift.Items.Add("A");
-                    cbbShift.Items.Add("B");
-
-
-                    cn.Open();
-
-                    string sqlPart = $@"SELECT DISTINCT cell_value FROM {g_.MainDB}.dbo.tb_master_data WITH (NOLOCK)
-                             WHERE column_name = 'Part name' ORDER BY cell_value";
-                    string sqlCover = $@"SELECT DISTINCT cell_value FROM {g_.MainDB}.dbo.tb_master_data WITH (NOLOCK)
-                             WHERE column_name = 'Cover material name' ORDER BY cell_value";
-                    string sqlFIPG = $@"SELECT DISTINCT cell_value FROM {g_.MainDB}.dbo.tb_master_data WITH (NOLOCK)
-                             WHERE column_name = 'FIPG Material name' ORDER BY cell_value";
-
-
-                    using (var cmdPart = new SqlCommand(sqlPart, cn))
-                    using (var rdPart = cmdPart.ExecuteReader())
-                    {
-                        while (rdPart.Read())
-                        {
-                            cbbPartName.Items.Add(rdPart.GetString(0));
-                        }
-                    }
-
-                    using (var cmdCover = new SqlCommand(sqlCover, cn))
-                    using (var rdCover = cmdCover.ExecuteReader())
-                    {
-                        while (rdCover.Read())
-                        {
-                            cbbCoverMaterialCode.Items.Add(rdCover.GetString(0));
-                        }
-                    }
-
-                    using (var cmdFIPG = new SqlCommand(sqlFIPG, cn))
-                    using (var rdFIPG = cmdFIPG.ExecuteReader())
-                    {
-                        while (rdFIPG.Read())
-                        {
-                            cbbFIPGMatCode.Items.Add(rdFIPG.GetString(0));
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("Load error: " + ex.ToString());
-                }
-
+                cb.Items.Add(item);
             }
         }
         private void Frm0390_Shown(object sender, EventArgs e)
@@ -133,10 +142,6 @@ namespace TEXT
 
         }
 
-        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -180,29 +185,58 @@ namespace TEXT
             Frm03902.Show();
         }
 
-        private void cbbPartName_click(object sender, EventArgs e)
-        {
-            //SqlConnection cn = new SqlConnection(g_.ConStr);
-            //try
-            //{
-            //    cbbProductName.Items.Clear();
-            //    cn.Open();
-            //    string Sql = $"SELECT DISTINCT cell_value FROM {g_.MainDB}.dbo.tb_master_data (NOLOCK) where column_name = 'Part name' ORDER BY cell_value";
-            //    SqlCommand cm = new SqlCommand(Sql, cn);
-            //    SqlDataReader rd = cm.ExecuteReader();
-            //    while (rd.Read())
-            //    {
-            //        cbbPartName.Items.Add(rd[0]);
-            //    }
-            //    rd.Close();
-
-            //}
-            //catch (Exception) { }
-        }
-
         private void btn39ChkBar_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn39Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        private void dtStamping_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dt = dtStamping.Value;
+            string result = DateCode.GetDateCode(dt);
+            txtStamping.Text = result;
+        }
+
+        private void dtPassivation_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dt = dtPassivation.Value;
+            string result = DateCode.GetDateCode(dt);
+            txtPassivation.Text = result;
+        }
+
+        private void dtPlotting_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dt = dtPlotting.Value;
+            string result = DateCode.GetDateCode(dt);
+            txtPlotting.Text = result;
+        }
+
+        private void txtPlottingNo_TextChanged(object sender, EventArgs e)
+        {
+            txtPlottingCode.Text = SqlSelect.GetValue("Plotting Machine", "Plotting M/C no.", txtPlottingNo.Text, "Code")?.FirstOrDefault();
+        }
+
+        private void cbbPartName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtPartNumber.Text = SqlSelect.GetValue("Part name", "Part name", cbbPartName.Text, "Part number")?.FirstOrDefault();
+            txtFactoryCode.Text = SqlSelect.GetValue("Part name", "Part name", cbbPartName.Text, "Factory Code")?.FirstOrDefault();
+
+        }
+        private void cbbCoverMaterialCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCoverMaterialName.Text = SqlSelect.GetValue("Cover material", "Cover material name", cbbCoverMaterialCode.Text, "Code")?.FirstOrDefault();
+        }
+        private void cbbFIPGMatCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFIPGMatName.Text = SqlSelect.GetValue("FIPG Material", "Code", cbbFIPGMatCode.Text, "FIPG Material name")?.FirstOrDefault();
         }
     }
 }

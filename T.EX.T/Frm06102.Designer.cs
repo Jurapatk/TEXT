@@ -107,7 +107,7 @@
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.pnlHeader.Controls.Add(this.icoLogout, 7, 0);
             this.pnlHeader.Controls.Add(this.pictureBox4, 5, 0);
             this.pnlHeader.Controls.Add(this.icoSetting, 6, 0);
@@ -128,7 +128,7 @@
             this.icoLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.icoLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.icoLogout.Image = global::TEXT.Properties.Resources.LogOut;
-            this.icoLogout.Location = new System.Drawing.Point(1473, 21);
+            this.icoLogout.Location = new System.Drawing.Point(1471, 21);
             this.icoLogout.Name = "icoLogout";
             this.icoLogout.Size = new System.Drawing.Size(39, 36);
             this.icoLogout.TabIndex = 0;
@@ -140,7 +140,7 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox4.Image = global::TEXT.Properties.Resources.user1;
-            this.pictureBox4.Location = new System.Drawing.Point(1296, 21);
+            this.pictureBox4.Location = new System.Drawing.Point(1291, 21);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 37);
             this.pictureBox4.TabIndex = 0;
@@ -151,7 +151,7 @@
             this.icoSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.icoSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.icoSetting.Image = global::TEXT.Properties.Resources.Setting;
-            this.icoSetting.Location = new System.Drawing.Point(1374, 19);
+            this.icoSetting.Location = new System.Drawing.Point(1369, 19);
             this.icoSetting.Name = "icoSetting";
             this.icoSetting.Size = new System.Drawing.Size(40, 41);
             this.icoSetting.TabIndex = 0;
@@ -188,7 +188,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(1135, 23);
+            this.lblUsername.Location = new System.Drawing.Point(1130, 23);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(138, 32);
             this.lblUsername.TabIndex = 1;
@@ -200,7 +200,7 @@
             this.LblMC.AutoSize = true;
             this.LblMC.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMC.ForeColor = System.Drawing.Color.White;
-            this.LblMC.Location = new System.Drawing.Point(979, 23);
+            this.LblMC.Location = new System.Drawing.Point(974, 23);
             this.LblMC.Name = "LblMC";
             this.LblMC.Size = new System.Drawing.Size(91, 32);
             this.LblMC.TabIndex = 1;
@@ -212,7 +212,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(691, 23);
+            this.label6.Location = new System.Drawing.Point(687, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(141, 32);
             this.label6.TabIndex = 1;

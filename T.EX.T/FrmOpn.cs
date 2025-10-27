@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,7 +44,19 @@ namespace TEXT
             _slideTimer = new Timer();
             _slideTimer.Interval = 15; // ms
             _slideTimer.Tick += SlideTimer_Tick;
-         
+            List<string> arrTable = SqlSelect.GetTableArray();
+            var dataTables = new List<DataTable>();
+
+            for (int i = 0; i < arrTable.Count; i++)
+            {
+                DataTable dt = SqlSelect.GetDataTable(arrTable[i]);
+                dataTables.Add(dt);
+            }
+
+
+            lblUsername.Text = user;
+          
+
         }
 
     

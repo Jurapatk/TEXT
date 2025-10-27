@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlHeader = new System.Windows.Forms.TableLayoutPanel();
+            this.icoLogout = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.icoSetting = new System.Windows.Forms.PictureBox();
+            this.icoBack2Opn = new System.Windows.Forms.PictureBox();
             this.lblText = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.LblMC = new System.Windows.Forms.Label();
@@ -41,19 +45,19 @@
             this.cbbReOven = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txtPlottingCode = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtPlottingNo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtPassivation = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.dtPassivation = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.txtStamping = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.label28 = new System.Windows.Forms.Label();
             this.cbbProductRevision = new System.Windows.Forms.ComboBox();
@@ -73,9 +77,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbPartName = new System.Windows.Forms.ComboBox();
             this.pnl0390 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -94,9 +95,21 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
             this.cbbFIPGMatCode = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtFIPGMatName = new System.Windows.Forms.TextBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btn39Reset = new System.Windows.Forms.Button();
+            this.btn39ChkBar = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn39Save = new System.Windows.Forms.Button();
+            this.btn39Next = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dtStamping = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.dtPlotting = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label29 = new System.Windows.Forms.Label();
             this.cbbShift = new System.Windows.Forms.ComboBox();
@@ -105,28 +118,19 @@
             this.cbbCoverMaterialCode = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtPlotting = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
             this.cbbTool = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
             this.label31 = new System.Windows.Forms.Label();
             this.txtCoverMaterialName = new System.Windows.Forms.TextBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.btn39Reset = new System.Windows.Forms.Button();
-            this.btn39ChkBar = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btn39Save = new System.Windows.Forms.Button();
-            this.btn39Next = new System.Windows.Forms.Button();
-            this.icoLogout = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.icoSetting = new System.Windows.Forms.PictureBox();
-            this.icoBack2Opn = new System.Windows.Forms.PictureBox();
             this.OpnBG = new System.Windows.Forms.PictureBox();
             this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icoLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icoSetting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icoBack2Opn)).BeginInit();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
             this.tableLayoutPanel28.SuspendLayout();
@@ -141,20 +145,13 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.pnl0390.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
-            this.tableLayoutPanel29.SuspendLayout();
-            this.tableLayoutPanel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -162,10 +159,13 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.icoLogout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icoSetting)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icoBack2Opn)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel29.SuspendLayout();
+            this.tableLayoutPanel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OpnBG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,7 +180,7 @@
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.pnlHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.pnlHeader.Controls.Add(this.icoLogout, 7, 0);
             this.pnlHeader.Controls.Add(this.pictureBox4, 5, 0);
             this.pnlHeader.Controls.Add(this.icoSetting, 6, 0);
@@ -196,13 +196,60 @@
             this.pnlHeader.Size = new System.Drawing.Size(1552, 79);
             this.pnlHeader.TabIndex = 3;
             // 
+            // icoLogout
+            // 
+            this.icoLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icoLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.icoLogout.Image = global::TEXT.Properties.Resources.LogOut;
+            this.icoLogout.Location = new System.Drawing.Point(1473, 21);
+            this.icoLogout.Name = "icoLogout";
+            this.icoLogout.Size = new System.Drawing.Size(39, 36);
+            this.icoLogout.TabIndex = 0;
+            this.icoLogout.TabStop = false;
+            this.icoLogout.Click += new System.EventHandler(this.icoLogout_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureBox4.Image = global::TEXT.Properties.Resources.user1;
+            this.pictureBox4.Location = new System.Drawing.Point(1296, 21);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(39, 37);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // icoSetting
+            // 
+            this.icoSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icoSetting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.icoSetting.Image = global::TEXT.Properties.Resources.Setting;
+            this.icoSetting.Location = new System.Drawing.Point(1374, 19);
+            this.icoSetting.Name = "icoSetting";
+            this.icoSetting.Size = new System.Drawing.Size(40, 41);
+            this.icoSetting.TabIndex = 0;
+            this.icoSetting.TabStop = false;
+            this.icoSetting.Click += new System.EventHandler(this.icoSetting_Click);
+            // 
+            // icoBack2Opn
+            // 
+            this.icoBack2Opn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.icoBack2Opn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.icoBack2Opn.Image = global::TEXT.Properties.Resources.Back;
+            this.icoBack2Opn.Location = new System.Drawing.Point(36, 21);
+            this.icoBack2Opn.Name = "icoBack2Opn";
+            this.icoBack2Opn.Size = new System.Drawing.Size(39, 37);
+            this.icoBack2Opn.TabIndex = 0;
+            this.icoBack2Opn.TabStop = false;
+            this.icoBack2Opn.Click += new System.EventHandler(this.icoBack2Opn_Click);
+            // 
             // lblText
             // 
             this.lblText.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblText.ForeColor = System.Drawing.Color.White;
-            this.lblText.Location = new System.Drawing.Point(117, 23);
+            this.lblText.Location = new System.Drawing.Point(115, 23);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(395, 32);
             this.lblText.TabIndex = 1;
@@ -215,7 +262,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(1148, 23);
+            this.lblUsername.Location = new System.Drawing.Point(1135, 23);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(138, 32);
             this.lblUsername.TabIndex = 1;
@@ -227,7 +274,7 @@
             this.LblMC.AutoSize = true;
             this.LblMC.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblMC.ForeColor = System.Drawing.Color.White;
-            this.LblMC.Location = new System.Drawing.Point(992, 23);
+            this.LblMC.Location = new System.Drawing.Point(979, 23);
             this.LblMC.Name = "LblMC";
             this.LblMC.Size = new System.Drawing.Size(91, 32);
             this.LblMC.TabIndex = 1;
@@ -239,7 +286,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(597, 23);
+            this.label6.Location = new System.Drawing.Point(589, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(224, 32);
             this.label6.TabIndex = 1;
@@ -327,7 +374,7 @@
             this.tableLayoutPanel28.ColumnCount = 1;
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel28.Controls.Add(this.label25, 0, 0);
-            this.tableLayoutPanel28.Controls.Add(this.textBox28, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.txtPlottingCode, 0, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel28.Location = new System.Drawing.Point(443, 331);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
@@ -350,24 +397,24 @@
             this.label25.Text = "Plotting M/C no. Code";
             this.label25.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox28
+            // txtPlottingCode
             // 
-            this.textBox28.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox28.Enabled = false;
-            this.textBox28.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textBox28.Location = new System.Drawing.Point(3, 19);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(306, 28);
-            this.textBox28.TabIndex = 3;
+            this.txtPlottingCode.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPlottingCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlottingCode.Enabled = false;
+            this.txtPlottingCode.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtPlottingCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtPlottingCode.Location = new System.Drawing.Point(3, 19);
+            this.txtPlottingCode.Name = "txtPlottingCode";
+            this.txtPlottingCode.Size = new System.Drawing.Size(306, 28);
+            this.txtPlottingCode.TabIndex = 3;
             // 
             // tableLayoutPanel27
             // 
             this.tableLayoutPanel27.ColumnCount = 1;
             this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel27.Controls.Add(this.label26, 0, 0);
-            this.tableLayoutPanel27.Controls.Add(this.textBox27, 0, 1);
+            this.tableLayoutPanel27.Controls.Add(this.txtPlottingNo, 0, 1);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel27.Location = new System.Drawing.Point(443, 276);
             this.tableLayoutPanel27.Name = "tableLayoutPanel27";
@@ -390,23 +437,24 @@
             this.label26.Text = "Plotting M/C no.";
             this.label26.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox27
+            // txtPlottingNo
             // 
-            this.textBox27.BackColor = System.Drawing.Color.White;
-            this.textBox27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox27.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textBox27.Location = new System.Drawing.Point(3, 19);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(306, 28);
-            this.textBox27.TabIndex = 3;
+            this.txtPlottingNo.BackColor = System.Drawing.Color.White;
+            this.txtPlottingNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlottingNo.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtPlottingNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtPlottingNo.Location = new System.Drawing.Point(3, 19);
+            this.txtPlottingNo.Name = "txtPlottingNo";
+            this.txtPlottingNo.Size = new System.Drawing.Size(306, 28);
+            this.txtPlottingNo.TabIndex = 3;
+            this.txtPlottingNo.TextChanged += new System.EventHandler(this.txtPlottingNo_TextChanged);
             // 
             // tableLayoutPanel26
             // 
             this.tableLayoutPanel26.ColumnCount = 1;
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel26.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel26.Controls.Add(this.textBox26, 0, 1);
+            this.tableLayoutPanel26.Controls.Add(this.txtPassivation, 0, 1);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel26.Location = new System.Drawing.Point(443, 221);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
@@ -429,24 +477,24 @@
             this.label7.Text = "Passivation date code";
             this.label7.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox26
+            // txtPassivation
             // 
-            this.textBox26.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox26.Enabled = false;
-            this.textBox26.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textBox26.Location = new System.Drawing.Point(3, 19);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(306, 28);
-            this.textBox26.TabIndex = 3;
+            this.txtPassivation.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPassivation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPassivation.Enabled = false;
+            this.txtPassivation.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtPassivation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtPassivation.Location = new System.Drawing.Point(3, 19);
+            this.txtPassivation.Name = "txtPassivation";
+            this.txtPassivation.Size = new System.Drawing.Size(306, 28);
+            this.txtPassivation.TabIndex = 3;
             // 
             // tableLayoutPanel25
             // 
             this.tableLayoutPanel25.ColumnCount = 1;
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel25.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.comboBox8, 0, 1);
+            this.tableLayoutPanel25.Controls.Add(this.dtPassivation, 0, 1);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel25.Location = new System.Drawing.Point(443, 166);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
@@ -469,24 +517,22 @@
             this.label8.Text = "Passivation date";
             this.label8.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox8
+            // dtPassivation
             // 
-            this.comboBox8.BackColor = System.Drawing.Color.White;
-            this.comboBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox8.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(3, 19);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(306, 32);
-            this.comboBox8.TabIndex = 1;
-            this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
+            this.dtPassivation.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.dtPassivation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtPassivation.Location = new System.Drawing.Point(3, 19);
+            this.dtPassivation.Name = "dtPassivation";
+            this.dtPassivation.Size = new System.Drawing.Size(306, 22);
+            this.dtPassivation.TabIndex = 1;
+            this.dtPassivation.ValueChanged += new System.EventHandler(this.dtPassivation_ValueChanged);
             // 
             // tableLayoutPanel24
             // 
             this.tableLayoutPanel24.ColumnCount = 1;
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel24.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel24.Controls.Add(this.textBox30, 0, 1);
+            this.tableLayoutPanel24.Controls.Add(this.txtStamping, 0, 1);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel24.Location = new System.Drawing.Point(443, 111);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
@@ -509,17 +555,17 @@
             this.label9.Text = "Stamping date code";
             this.label9.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox30
+            // txtStamping
             // 
-            this.textBox30.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox30.Enabled = false;
-            this.textBox30.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textBox30.Location = new System.Drawing.Point(3, 19);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(306, 28);
-            this.textBox30.TabIndex = 3;
+            this.txtStamping.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtStamping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStamping.Enabled = false;
+            this.txtStamping.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtStamping.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtStamping.Location = new System.Drawing.Point(3, 19);
+            this.txtStamping.Name = "txtStamping";
+            this.txtStamping.Size = new System.Drawing.Size(306, 28);
+            this.txtStamping.TabIndex = 3;
             // 
             // tableLayoutPanel18
             // 
@@ -756,6 +802,7 @@
             this.cbbPartName.Name = "cbbPartName";
             this.cbbPartName.Size = new System.Drawing.Size(306, 32);
             this.cbbPartName.TabIndex = 1;
+            this.cbbPartName.SelectedIndexChanged += new System.EventHandler(this.cbbPartName_SelectedIndexChanged);
             // 
             // pnl0390
             // 
@@ -815,45 +862,6 @@
             this.pnl0390.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.53524F));
             this.pnl0390.Size = new System.Drawing.Size(1201, 704);
             this.pnl0390.TabIndex = 5;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox7, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(443, 56);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(3, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(122, 16);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Stamping date";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.BackColor = System.Drawing.Color.White;
-            this.comboBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox7.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(3, 19);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(306, 32);
-            this.comboBox7.TabIndex = 1;
-            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -1089,172 +1097,14 @@
             this.cbbFIPGMatCode.Name = "cbbFIPGMatCode";
             this.cbbFIPGMatCode.Size = new System.Drawing.Size(306, 32);
             this.cbbFIPGMatCode.TabIndex = 1;
-            this.cbbFIPGMatCode.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 1;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.comboBox9, 0, 1);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(443, 386);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel12.TabIndex = 6;
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(3, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(113, 16);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Plotting date ";
-            this.label21.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.BackColor = System.Drawing.Color.White;
-            this.comboBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox9.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(3, 19);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(306, 32);
-            this.comboBox9.TabIndex = 1;
-            this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 1;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Controls.Add(this.label29, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.cbbShift, 0, 1);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(125, 386);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 2;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel13.TabIndex = 6;
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label29.Location = new System.Drawing.Point(3, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(45, 16);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Shift";
-            this.label29.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cbbShift
-            // 
-            this.cbbShift.BackColor = System.Drawing.Color.White;
-            this.cbbShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbShift.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cbbShift.FormattingEnabled = true;
-            this.cbbShift.Location = new System.Drawing.Point(3, 19);
-            this.cbbShift.Name = "cbbShift";
-            this.cbbShift.Size = new System.Drawing.Size(306, 32);
-            this.cbbShift.TabIndex = 1;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 1;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Controls.Add(this.label30, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.cbbCoverMaterialCode, 0, 1);
-            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(125, 441);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 2;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel14.TabIndex = 6;
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label30.Location = new System.Drawing.Point(3, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(164, 16);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Cover material code";
-            this.label30.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cbbCoverMaterialCode
-            // 
-            this.cbbCoverMaterialCode.BackColor = System.Drawing.Color.White;
-            this.cbbCoverMaterialCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbCoverMaterialCode.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cbbCoverMaterialCode.FormattingEnabled = true;
-            this.cbbCoverMaterialCode.Location = new System.Drawing.Point(3, 19);
-            this.cbbCoverMaterialCode.Name = "cbbCoverMaterialCode";
-            this.cbbCoverMaterialCode.Size = new System.Drawing.Size(306, 32);
-            this.cbbCoverMaterialCode.TabIndex = 1;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 1;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Controls.Add(this.label20, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.textBox10, 0, 1);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(443, 441);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel15.TabIndex = 6;
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(3, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(151, 16);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Plotting date code";
-            this.label20.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textBox10.Location = new System.Drawing.Point(3, 19);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(306, 28);
-            this.textBox10.TabIndex = 3;
+            this.cbbFIPGMatCode.SelectedIndexChanged += new System.EventHandler(this.cbbFIPGMatCode_SelectedIndexChanged);
             // 
             // tableLayoutPanel19
             // 
             this.tableLayoutPanel19.ColumnCount = 1;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel19.Controls.Add(this.label16, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.textBox11, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.txtFIPGMatName, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(761, 496);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -1277,97 +1127,17 @@
             this.label16.Text = "FIPG Material name";
             this.label16.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox11
+            // txtFIPGMatName
             // 
-            this.textBox11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox11.Enabled = false;
-            this.textBox11.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.textBox11.Location = new System.Drawing.Point(3, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(306, 28);
-            this.textBox11.TabIndex = 3;
-            // 
-            // tableLayoutPanel29
-            // 
-            this.tableLayoutPanel29.ColumnCount = 1;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel29.Controls.Add(this.label19, 0, 0);
-            this.tableLayoutPanel29.Controls.Add(this.cbbTool, 0, 1);
-            this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(443, 496);
-            this.tableLayoutPanel29.Name = "tableLayoutPanel29";
-            this.tableLayoutPanel29.RowCount = 2;
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel29.TabIndex = 6;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(3, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 16);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Tool no.";
-            this.label19.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // cbbTool
-            // 
-            this.cbbTool.BackColor = System.Drawing.Color.White;
-            this.cbbTool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbbTool.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cbbTool.FormattingEnabled = true;
-            this.cbbTool.Location = new System.Drawing.Point(3, 19);
-            this.cbbTool.Name = "cbbTool";
-            this.cbbTool.Size = new System.Drawing.Size(306, 32);
-            this.cbbTool.TabIndex = 1;
-            this.cbbTool.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
-            // 
-            // tableLayoutPanel30
-            // 
-            this.tableLayoutPanel30.ColumnCount = 1;
-            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel30.Controls.Add(this.label31, 0, 0);
-            this.tableLayoutPanel30.Controls.Add(this.txtCoverMaterialName, 0, 1);
-            this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel30.Location = new System.Drawing.Point(125, 496);
-            this.tableLayoutPanel30.Name = "tableLayoutPanel30";
-            this.tableLayoutPanel30.RowCount = 2;
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
-            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
-            this.tableLayoutPanel30.Size = new System.Drawing.Size(312, 49);
-            this.tableLayoutPanel30.TabIndex = 6;
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label31.Location = new System.Drawing.Point(3, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(170, 16);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "Cover material name";
-            this.label31.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtCoverMaterialName
-            // 
-            this.txtCoverMaterialName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCoverMaterialName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCoverMaterialName.Enabled = false;
-            this.txtCoverMaterialName.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtCoverMaterialName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txtCoverMaterialName.Location = new System.Drawing.Point(3, 19);
-            this.txtCoverMaterialName.Name = "txtCoverMaterialName";
-            this.txtCoverMaterialName.Size = new System.Drawing.Size(306, 28);
-            this.txtCoverMaterialName.TabIndex = 3;
+            this.txtFIPGMatName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFIPGMatName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFIPGMatName.Enabled = false;
+            this.txtFIPGMatName.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtFIPGMatName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtFIPGMatName.Location = new System.Drawing.Point(3, 19);
+            this.txtFIPGMatName.Name = "txtFIPGMatName";
+            this.txtFIPGMatName.Size = new System.Drawing.Size(306, 28);
+            this.txtFIPGMatName.TabIndex = 3;
             // 
             // splitContainer2
             // 
@@ -1446,6 +1216,7 @@
             this.btn39Save.TabIndex = 7;
             this.btn39Save.Text = "SAVE";
             this.btn39Save.UseVisualStyleBackColor = false;
+            this.btn39Save.Click += new System.EventHandler(this.btn39Save_Click);
             // 
             // btn39Next
             // 
@@ -1462,52 +1233,279 @@
             this.btn39Next.UseVisualStyleBackColor = false;
             this.btn39Next.Click += new System.EventHandler(this.btn39Next_Click);
             // 
-            // icoLogout
+            // tableLayoutPanel1
             // 
-            this.icoLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icoLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.icoLogout.Image = global::TEXT.Properties.Resources.LogOut;
-            this.icoLogout.Location = new System.Drawing.Point(1480, 21);
-            this.icoLogout.Name = "icoLogout";
-            this.icoLogout.Size = new System.Drawing.Size(39, 36);
-            this.icoLogout.TabIndex = 0;
-            this.icoLogout.TabStop = false;
-            this.icoLogout.Click += new System.EventHandler(this.icoLogout_Click);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtStamping, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(443, 56);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // pictureBox4
+            // label17
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox4.Image = global::TEXT.Properties.Resources.user1;
-            this.pictureBox4.Location = new System.Drawing.Point(1309, 21);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 37);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Location = new System.Drawing.Point(3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(122, 16);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Stamping date";
             // 
-            // icoSetting
+            // dtStamping
             // 
-            this.icoSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icoSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.icoSetting.Image = global::TEXT.Properties.Resources.Setting;
-            this.icoSetting.Location = new System.Drawing.Point(1387, 19);
-            this.icoSetting.Name = "icoSetting";
-            this.icoSetting.Size = new System.Drawing.Size(40, 41);
-            this.icoSetting.TabIndex = 0;
-            this.icoSetting.TabStop = false;
-            this.icoSetting.Click += new System.EventHandler(this.icoSetting_Click);
+            this.dtStamping.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.dtStamping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtStamping.Location = new System.Drawing.Point(3, 19);
+            this.dtStamping.Name = "dtStamping";
+            this.dtStamping.Size = new System.Drawing.Size(306, 22);
+            this.dtStamping.TabIndex = 1;
+            this.dtStamping.ValueChanged += new System.EventHandler(this.dtStamping_ValueChanged);
             // 
-            // icoBack2Opn
+            // tableLayoutPanel12
             // 
-            this.icoBack2Opn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.icoBack2Opn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.icoBack2Opn.Image = global::TEXT.Properties.Resources.Back;
-            this.icoBack2Opn.Location = new System.Drawing.Point(37, 21);
-            this.icoBack2Opn.Name = "icoBack2Opn";
-            this.icoBack2Opn.Size = new System.Drawing.Size(39, 37);
-            this.icoBack2Opn.TabIndex = 0;
-            this.icoBack2Opn.TabStop = false;
-            this.icoBack2Opn.Click += new System.EventHandler(this.icoBack2Opn_Click);
+            this.tableLayoutPanel12.ColumnCount = 1;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.dtPlotting, 0, 1);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(443, 386);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel12.TabIndex = 6;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label21.Location = new System.Drawing.Point(3, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(113, 16);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Plotting date ";
+            this.label21.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dtPlotting
+            // 
+            this.dtPlotting.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.dtPlotting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtPlotting.Location = new System.Drawing.Point(3, 19);
+            this.dtPlotting.Name = "dtPlotting";
+            this.dtPlotting.Size = new System.Drawing.Size(306, 22);
+            this.dtPlotting.TabIndex = 1;
+            this.dtPlotting.ValueChanged += new System.EventHandler(this.dtPlotting_ValueChanged);
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.label29, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.cbbShift, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(125, 386);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel13.TabIndex = 6;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label29.Location = new System.Drawing.Point(3, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(45, 16);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Shift";
+            this.label29.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cbbShift
+            // 
+            this.cbbShift.BackColor = System.Drawing.Color.White;
+            this.cbbShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbShift.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cbbShift.FormattingEnabled = true;
+            this.cbbShift.Location = new System.Drawing.Point(3, 19);
+            this.cbbShift.Name = "cbbShift";
+            this.cbbShift.Size = new System.Drawing.Size(306, 32);
+            this.cbbShift.TabIndex = 1;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.label30, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.cbbCoverMaterialCode, 0, 1);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(125, 441);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 2;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel14.TabIndex = 6;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label30.Location = new System.Drawing.Point(3, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(164, 16);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Cover material code";
+            this.label30.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cbbCoverMaterialCode
+            // 
+            this.cbbCoverMaterialCode.BackColor = System.Drawing.Color.White;
+            this.cbbCoverMaterialCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbCoverMaterialCode.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cbbCoverMaterialCode.FormattingEnabled = true;
+            this.cbbCoverMaterialCode.Location = new System.Drawing.Point(3, 19);
+            this.cbbCoverMaterialCode.Name = "cbbCoverMaterialCode";
+            this.cbbCoverMaterialCode.Size = new System.Drawing.Size(306, 32);
+            this.cbbCoverMaterialCode.TabIndex = 1;
+            this.cbbCoverMaterialCode.SelectedIndexChanged += new System.EventHandler(this.cbbCoverMaterialCode_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 1;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.txtPlotting, 0, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(443, 441);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel15.TabIndex = 6;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label20.Location = new System.Drawing.Point(3, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(151, 16);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Plotting date code";
+            this.label20.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtPlotting
+            // 
+            this.txtPlotting.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPlotting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlotting.Enabled = false;
+            this.txtPlotting.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtPlotting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtPlotting.Location = new System.Drawing.Point(3, 19);
+            this.txtPlotting.Name = "txtPlotting";
+            this.txtPlotting.Size = new System.Drawing.Size(306, 28);
+            this.txtPlotting.TabIndex = 3;
+            // 
+            // tableLayoutPanel29
+            // 
+            this.tableLayoutPanel29.ColumnCount = 1;
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel29.Controls.Add(this.label19, 0, 0);
+            this.tableLayoutPanel29.Controls.Add(this.cbbTool, 0, 1);
+            this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel29.Location = new System.Drawing.Point(443, 496);
+            this.tableLayoutPanel29.Name = "tableLayoutPanel29";
+            this.tableLayoutPanel29.RowCount = 2;
+            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel29.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel29.TabIndex = 6;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label19.Location = new System.Drawing.Point(3, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 16);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Tool no.";
+            this.label19.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cbbTool
+            // 
+            this.cbbTool.BackColor = System.Drawing.Color.White;
+            this.cbbTool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbbTool.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cbbTool.FormattingEnabled = true;
+            this.cbbTool.Location = new System.Drawing.Point(3, 19);
+            this.cbbTool.Name = "cbbTool";
+            this.cbbTool.Size = new System.Drawing.Size(306, 32);
+            this.cbbTool.TabIndex = 1;
+            this.cbbTool.SelectedIndexChanged += new System.EventHandler(this.cbbFIPGMatCode_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel30
+            // 
+            this.tableLayoutPanel30.ColumnCount = 1;
+            this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel30.Controls.Add(this.label31, 0, 0);
+            this.tableLayoutPanel30.Controls.Add(this.txtCoverMaterialName, 0, 1);
+            this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel30.Location = new System.Drawing.Point(125, 496);
+            this.tableLayoutPanel30.Name = "tableLayoutPanel30";
+            this.tableLayoutPanel30.RowCount = 2;
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.59F));
+            this.tableLayoutPanel30.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.41F));
+            this.tableLayoutPanel30.Size = new System.Drawing.Size(312, 49);
+            this.tableLayoutPanel30.TabIndex = 6;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Montserrat SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label31.Location = new System.Drawing.Point(3, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(170, 16);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "Cover material name";
+            this.label31.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtCoverMaterialName
+            // 
+            this.txtCoverMaterialName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCoverMaterialName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCoverMaterialName.Enabled = false;
+            this.txtCoverMaterialName.Font = new System.Drawing.Font("Montserrat Medium", 10.2F, System.Drawing.FontStyle.Bold);
+            this.txtCoverMaterialName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtCoverMaterialName.Location = new System.Drawing.Point(3, 19);
+            this.txtCoverMaterialName.Name = "txtCoverMaterialName";
+            this.txtCoverMaterialName.Size = new System.Drawing.Size(306, 28);
+            this.txtCoverMaterialName.TabIndex = 3;
             // 
             // OpnBG
             // 
@@ -1535,6 +1533,10 @@
             this.Resize += new System.EventHandler(this.Frm0390_Resize);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icoLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icoSetting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icoBack2Opn)).EndInit();
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel21.PerformLayout();
             this.tableLayoutPanel22.ResumeLayout(false);
@@ -1562,8 +1564,6 @@
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
             this.pnl0390.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -1576,6 +1576,17 @@
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel19.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);
@@ -1584,23 +1595,10 @@
             this.tableLayoutPanel14.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
-            this.tableLayoutPanel19.ResumeLayout(false);
-            this.tableLayoutPanel19.PerformLayout();
             this.tableLayoutPanel29.ResumeLayout(false);
             this.tableLayoutPanel29.PerformLayout();
             this.tableLayoutPanel30.ResumeLayout(false);
             this.tableLayoutPanel30.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.icoLogout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icoSetting)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icoBack2Opn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpnBG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1624,11 +1622,11 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txtPlottingCode;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtPlottingNo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox txtPassivation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
@@ -1658,9 +1656,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtPlotting;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtFIPGMatName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
         private System.Windows.Forms.TextBox txtCoverMaterialName;
@@ -1685,7 +1683,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox txtStamping;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label29;
@@ -1693,12 +1691,9 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox cbbProductRevision;
         private System.Windows.Forms.ComboBox cbbPartName;
-        private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ComboBox cbbShift;
         private System.Windows.Forms.ComboBox cbbCoverMaterialCode;
-        private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.ComboBox cbbFIPGMatCode;
-        private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.ComboBox cbbTool;
         private System.Windows.Forms.ComboBox cbbReOven;
         private System.Windows.Forms.Button btn39Reset;
@@ -1707,5 +1702,8 @@
         private System.Windows.Forms.Button btn39Next;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.DateTimePicker dtStamping;
+        private System.Windows.Forms.DateTimePicker dtPassivation;
+        private System.Windows.Forms.DateTimePicker dtPlotting;
     }
 }
