@@ -13,6 +13,7 @@ using System.Threading;
 using System.Globalization;
 using T.EX.T;
 using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations;
 
 
 
@@ -38,62 +39,8 @@ namespace TEXT
             FillComboBox(cbbPartName, "Part name", "Part name");
             FillComboBox(cbbProductRevision, "Product Revision", "Code");
             FillComboBox(cbbTool, "Fixture", "Code");
-            FillComboBox(cbbCoverMaterialCode, "Cover Material", "Cover material name");
+            FillComboBox(cbbCoverMaterialCode, "Cover Material", "Code");
 
-
-
-            //cbbPartName.Items.Clear();
-            //cbbCoverMaterialCode.Items.Clear();
-            //cbbReOven.Items.Clear();
-            //cbbShift.Items.Clear();
-            //cbbFIPGMatCode.Items.Clear();
-            //cbbProductRevision.Items.AddRange(Enumerable.Range('A', 26)
-            //    .Select(i => ((char)i).ToString())
-            //    .ToArray());
-            //cbbTool.Items.AddRange(Enumerable.Range(1, 9).Select(n => n.ToString()).ToArray());
-
-            //void FillComboBox<T>(ComboBox cb, string tableName, string columnName)
-            //{
-            //    var dt = SqlSelect.GetDataTable(tableName);
-            //    var list = SqlSelect.GetList(tableName, columnName);
-            //    foreach (var item in list)
-            //        cb.Items.Add(item);
-            //}
-
-            //// ใช้
-            //FillComboBox(cbbReOven, "Re-Oven Baking", "Code");
-            //FillComboBox(cbbShift, "Shift", "Code");
-            //FillComboBox(cbbFIPGMatCode, "FIPG Material", "Code");
-
-            //// สำหรับ Part name
-            //FillComboBox(cbbPartName, "Part name", "Part name");
-            //DataTable dt = SqlSelect.GetDataTable("Re-Oven Baking");
-            //List<string> reoven = SqlSelect.GetList("Re-Oven Baking", "Code");
-            //foreach (string code in reoven)
-            //{
-            //    cbbReOven.Items.Add(code);
-            //}
-
-            //DataTable dt2 = SqlSelect.GetDataTable("Shift");
-            //List<string> shift = SqlSelect.GetList("Shift", "Code");
-            //foreach (string code in shift)
-            //{
-            //    cbbShift.Items.Add(code);
-            //}
-
-            //DataTable dt3 = SqlSelect.GetDataTable("FIPG Material");
-            //List<string> fipg = SqlSelect.GetList("FIPG Material", "Code");
-            //foreach (string code in fipg)
-            //{
-            //    cbbFIPGMatCode.Items.Add(code);
-            //}
-
-            //DataTable dt4 = SqlSelect.GetDataTable("Part name");
-            //List<string> pn = SqlSelect.GetList("Part name", "Part name");
-            //foreach (string code in pn)
-            //{
-            //    cbbPartName.Items.Add(code);
-            //}
         }
         private void FillComboBox(ComboBox cb, string tableName, string columnName)
         {
@@ -150,7 +97,99 @@ namespace TEXT
 
         private void btn39ChkBar_Click(object sender, EventArgs e)
         {
+            bool result = true;
+            string Noti = "";
 
+            if (txtPlotting.Text == "")
+            {
+                MessageBox.Show("Please fill Plotting Date", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (txtStartSN.Text == "")
+            {
+                MessageBox.Show("Please fill Start Serial no.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (txtEndSN.Text == "")
+            {
+                MessageBox.Show("Please fill End Serial no.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ///Start 2D
+
+            if (txt2DStart.Text.Substring(13,2) != txtPlotting.Text.Substring(1,2)) //ChkPosition1 Plotting Day
+            {
+                Noti = "Start_Edit WW " + txt2DStart.Text.Substring(13, 2) + "==>" + txtPlotting.Text.Substring(1, 2);
+                result = false;
+
+            }
+            
+            if (txt2DStart.Text.Substring(15, 1) != txtPlotting.Text.Substring(3, 1)) //ChkPosition2 Plotting Day
+            {
+                Noti += Environment.NewLine + "Start_Edit Day " + txt2DStart.Text.Substring(15, 1)  + "==>" + txtPlotting.Text.Substring(3, 1);
+                result = false;
+
+            }
+
+            if (txt2DStart.Text.Substring(23, 4) != txtStartSN.Text) //ChkPosition3 Start SN
+            {
+                Noti += Environment.NewLine + "Start_Edit Start SN " + txt2DStart.Text.Substring(23, 4) + "==>" + txtStartSN.Text;
+                result = false;
+
+            }
+           
+
+            if (result == false)
+            {
+                MessageBox.Show(Noti, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt2DResult.Text = "NG";
+
+                txt2DResult.BackColor = Color.FromArgb(255, 192, 192);
+            }
+            else
+            {
+                txt2DResult.BackColor = Color.FromArgb(192, 255, 192);
+                txt2DResult.Text = "Pass";
+ 
+            }
+
+            ///End 2D
+             if (txt2DEnd.Text.Substring(13,2) != txtPlotting.Text.Substring(1,2)) //ChkPosition1 Plotting Day
+            {
+                Noti = "End_Edit WW " + txt2DEnd.Text.Substring(13, 2) + "==>" + txtPlotting.Text.Substring(1, 2);
+                result = false;
+
+            }
+
+            if (txt2DEnd.Text.Substring(15, 1) != txtPlotting.Text.Substring(3, 1)) //ChkPosition2 Plotting Day
+            {
+                Noti += Environment.NewLine + "End_Edit Day " + txt2DEnd.Text.Substring(15, 1) + "==>" + txtPlotting.Text.Substring(3, 1);
+                result = false;
+
+            }
+
+            if (txt2DEnd.Text.Substring(23, 4) != txtEndSN.Text) //ChkPosition3 End SN
+            {
+                Noti += Environment.NewLine + "End_Edit End SN " + txt2DEnd.Text.Substring(23, 4) + "==>" + txtEndSN.Text;
+                result = false;
+
+            }
+
+
+            if (result == false)
+            {
+                MessageBox.Show(Noti, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt2DResult.Text = "NG";
+
+                txt2DResult.BackColor = Color.FromArgb(255, 192, 192);
+            }
+            else
+            {
+                txt2DResult.BackColor = Color.FromArgb(192, 255, 192);
+                txt2DResult.Text = "Pass";
+
+            }
         }
 
         private void icoSetting_Click(object sender, EventArgs e)
@@ -185,10 +224,6 @@ namespace TEXT
             Frm03902.Show();
         }
 
-        private void btn39ChkBar_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn39Save_Click(object sender, EventArgs e)
         {
@@ -200,23 +235,78 @@ namespace TEXT
 
         private void dtStamping_ValueChanged(object sender, EventArgs e)
         {
+            if (dtStamping?.Value == null)
+                return;
+
             DateTime dt = dtStamping.Value;
-            string result = DateCode.GetDateCode(dt);
-            txtStamping.Text = result;
+
+            if (dt == DateTime.MinValue)
+            {
+                txtStamping.Text = string.Empty;
+                return;
+            }
+
+            try
+            {
+                string result = DateCode.GetDateCode(dt);
+                txtStamping.Text = result;
+            }
+            catch (Exception ex)
+            {
+                txtStamping.Text = "Invalid date";
+            }
         }
 
         private void dtPassivation_ValueChanged(object sender, EventArgs e)
         {
+
+            if (dtPassivation?.Value == null)
+                return;
+
             DateTime dt = dtPassivation.Value;
-            string result = DateCode.GetDateCode(dt);
-            txtPassivation.Text = result;
+
+            if (dt == DateTime.MinValue)
+            {
+                txtPassivation.Text = string.Empty;
+                return;
+            }
+
+            try
+            {
+                string result = DateCode.GetDateCode(dt);
+                txtPassivation.Text = result;
+            }
+            catch (Exception ex)
+            {
+                txtPassivation.Text = "Invalid date";
+            }
+
+         
         }
 
         private void dtPlotting_ValueChanged(object sender, EventArgs e)
         {
+            if (dtPlotting?.Value == null)
+                return;
+
             DateTime dt = dtPlotting.Value;
-            string result = DateCode.GetDateCode(dt);
-            txtPlotting.Text = result;
+
+            if (dt == DateTime.MinValue)
+            {
+                txtPlotting.Text = string.Empty;
+                return;
+            }
+
+            try
+            {
+                string result = DateCode.GetDateCode(dt);
+                txtPlotting.Text = result;
+            }
+            catch (Exception ex)
+            {
+                txtPlotting.Text = "Invalid date";
+            }
+            
         }
 
         private void txtPlottingNo_TextChanged(object sender, EventArgs e)
@@ -232,11 +322,47 @@ namespace TEXT
         }
         private void cbbCoverMaterialCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtCoverMaterialName.Text = SqlSelect.GetValue("Cover material", "Cover material name", cbbCoverMaterialCode.Text, "Code")?.FirstOrDefault();
+            txtCoverMaterialName.Text = SqlSelect.GetValue("Cover material", "Code", cbbCoverMaterialCode.Text, "Cover material name")?.FirstOrDefault();
         }
         private void cbbFIPGMatCode_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtFIPGMatName.Text = SqlSelect.GetValue("FIPG Material", "Code", cbbFIPGMatCode.Text, "FIPG Material name")?.FirstOrDefault();
         }
+
+        private void txtEndSN_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt2DQty_TextChanged(object sender, EventArgs e)
+        {
+            int startSN;
+            int qty2D;
+            string End;
+
+            if (int.TryParse(txtStartSN.Text, out startSN) && int.TryParse(txt2DQty.Text, out qty2D))
+            {
+                int endSN = startSN + qty2D - 1;
+                End = endSN.ToString("D4");
+                txtEndSN.Text = Base34.DecimalToBase34(long.Parse(End));
+            }
+
+        }
+
+        private void txtStartSN_TextChanged(object sender, EventArgs e)
+        {
+            int startSN;
+            int qty2D;
+            string End;
+
+            if (int.TryParse(txtStartSN.Text, out startSN) && int.TryParse(txt2DQty.Text, out qty2D))
+            {
+                int endSN = startSN + qty2D - 1;
+                End = endSN.ToString("D4");
+                txtEndSN.Text = Base34.DecimalToBase34(long.Parse(End));
+            }
+        }
+
+
     }
 }

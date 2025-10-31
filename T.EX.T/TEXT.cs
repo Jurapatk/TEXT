@@ -166,7 +166,38 @@ namespace TEXT
         }
     }
 
-  
+    public static class Base34
+    {
+        private const string Base34Symbols = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ";
+        private const int Base = 34;
+        private const int NumDigits = 4;
+
+        public static string DecimalToBase34(long decimalValue)
+        {
+            if (decimalValue < 0 || decimalValue > 1336335)
+            {
+                throw new ArgumentOutOfRangeException(nameof(decimalValue), "ค่าต้องอยู่ระหว่าง 0 ถึง 1,336,335");
+            }
+
+            if (decimalValue == 0)
+            {
+                return "0000";
+            }
+
+            string base34Value = "";
+            long tempValue = decimalValue;
+
+            while (tempValue > 0)
+            {
+                int remainder = (int)(tempValue % Base);
+                base34Value = Base34Symbols[remainder] + base34Value;
+                tempValue /= Base;
+            }
+
+            return base34Value.PadLeft(NumDigits, '0');
+        }
+    }
+
 
     public static class SqlSelect
     {
